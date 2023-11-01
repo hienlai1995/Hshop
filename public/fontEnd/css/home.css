@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+    .eventContent {
+        display: flex;
+        width: 100%;
+        height: 250px;
+    }
+    .carousel {
+        width: 70%;
+        height: max-content;
+    }
+    .subEvent {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    .subEventIteam {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        border: 1px solid white;
+    }
+    .homeProductContainer {
+        display: block;
+        width: 100%;
+        height: max-content;
+    }
+    .listTitle {
+        margin: 50px auto;
+        font-size: 30px;
+        color: gray;
+        font-family: "Courier New", Courier, monospace;
+    }
+    .productList {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: max-content;
+        flex-wrap: wrap;
+    }
+    .productBox {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        height: 400px;
+        margin: 20px auto;
+        border: 1px solid gray;
+        box-shadow: 1px 1px 2px 1px rgb(172, 164, 164);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .inforProduct {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .introduceProduct {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .pice {
+        color: red;
+    }
+    .introduce {
+        color: gray;
+        font-size: 18px;
+    }
+    .pagination {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        justify-content: center;
+        margin: 30px auto;
+    }
+    .pagiLi {
+        display: flex;
+        width: 50px;
+        height: 30px;
+        justify-content: center;
+    }
+    .pagiLi > a {
+        color: gray;
+        font-size: 25px;
+    }
+}
+/* global css */
+.homecontainer {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+}

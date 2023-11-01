@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+.addProductContainer {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.ad_addform {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 20px;
+    height: max-content;
+    width: 70%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 1px;
+}
+.inputData {
+    display: flex;
+    flex-direction: column;
+}
+.ad_addinputtag {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.ad_formaddmtn {
+    margin-top: 20px;
+}

@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+.lg_headContainer {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    background-color: white;
+}
+.lg_left,
+.lg_right {
+    display: flex;
+    width: 50%;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.lg_logo {
+    width: 200px;
+    height: 70px;
+    fill: red;
+}
+.pagename {
+    display: flex;
+    width: 200px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+.help {
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+}
