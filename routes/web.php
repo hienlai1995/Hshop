@@ -32,7 +32,6 @@ Route::post('/admin', [HomeControler::class, 'store'])->name("admin");
 Route::middleware(['checkRole:user'])->name('user.')->group(function () {
     // Các routes dành cho người dùng
     Route::get('/user', [UserController::class, 'index'])->name('index');
-    Route::post('/user', [UserController::class, 'buy'])->name('buy');
 });
 Route::middleware(['checkRole:admin'])->group(function () {
     Route::get('/admin', [HomeControler::class, 'admin'])->name('ohyeah');

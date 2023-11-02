@@ -38,7 +38,30 @@
                 <input type="text" name="" id="" class="searchInput" placeholder="nhập từ khóa tìm kiếm">
                 <button class="search_btn"><i class="fa-solid fa-magnifying-glass searchIcon"></i></button>
             </form>
-            <i class="fa-solid fa-cart-shopping cartIcon"></i>
+            <div class="cartList">
+                <button id="cart_icon" class="btn btn-danger" onclick="showCart()"><i class="fa-solid fa-cart-shopping cartIcon"></i></button>
+                <div class="cart_disble listCartContainer" id="listCartContainer">
+                    <div class="closeListCart">
+                        <button onclick="closePop()">X</button>
+                    </div>
+                    <h2>your product</h2>
+                    
+                        {{-- danh sách sản phẩm yêu thích --}}
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>name</th>
+                                <th>price</th>
+                                <th>function</th>
+                              </tr>
+                            </thead>
+                            <tbody id="list_cart">
+                             
+                            </tbody>
+                          </table>
+                    
+                </div>
+            </div>
         </div>
         <nav id="botHead" class="styleBotHead">
             <ul class="hotKey">
@@ -57,4 +80,5 @@
             </ul>
         </nav>
     </div>
+    
 </header>

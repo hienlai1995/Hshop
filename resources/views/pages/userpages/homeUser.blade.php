@@ -62,23 +62,17 @@
         <div class="productList">
              @foreach ($products as $item)
              <div class="productBox">
-                <img src="{{$item->path}}" alt="" width="100%" height="50%">
+                <img id="{{'cart_img'.$item->id}}" src="{{$item->path}}" alt="" width="100%" height="50%">
                 <div class="inforProduct">
-                    <h3 class="proDuctName">{{$item->name}}</h3>
-                    <h4 class="pice">{{$item->price}}</h4>
-                    <p class="introduceProduct">
+                    <h3 id="{{'cart_name'.$item->id}}"  class="proDuctName">{{$item->name}}</h3>
+                    <h4 id="{{'cart_price'.$item->id}}"  class="pice">{{$item->price}}</h4>
+                    <p id="{{'cart_intro'.$item->id}}"  class="introduceProduct">
                         {{$item->introduce}}
                     </p>
                 </div>
                 <div class="paymethod">
-                    <form action="{{route('user.buy',['id'=> $item->id])}}" method="post">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">MUA</button>
-                    </form>
-                    <form action="{{route('user.buy',['id'=> $item->id])}}" method="post">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">THÊM VÀO GIỎ HÀNG</button>
-                    </form>
+                        <button class="btn btn-danger"  type="submit" onclick="buy()">MUA</button>
+                        <button class="btn btn-danger" id="{{$item->id}}" type="submit" onclick="addCart(this.id)">THÊM VÀO GIỎ HÀNG</button>          
                 </div>
             </div>
              @endforeach
@@ -88,4 +82,5 @@
         {{$products->links()}}
     </div>
 </div>
+<script src="{{asset("fontEnd/js/user.js")}}"></script>
 @endsection

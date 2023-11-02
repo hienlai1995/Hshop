@@ -355,7 +355,47 @@
     height: max-content;
     background: linear-gradient(to bottom, #f53e2d, #ff6633);
     margin: 0;
-    z-index: 1;
+    z-index: 2;
+}
+.cartList {
+    display: block;
+    position: relative;
+}
+.listCartContainer {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 364px;
+    height: max-content;
+    background-color: aqua;
+    right: -258px;
+    top: 59px;
+    border: 1px solid gray;
+    border-radius: 10%;
+    align-items: center;
+    overflow: auto;
+    padding: 10px;
+}
+.cart_disble {
+    display: none;
+}
+.closeListCart {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: flex-end;
+}
+.closeListCart > button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+.listCartIteam {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: space-around;
 }
 .footerContainer {
     display: flex;
