@@ -79,6 +79,7 @@ class Admincontroller extends Controller
     public function search(Request $request)
     {
         $searchTerm = $request->input('adminSearch');
+        
         // Tìm kiếm trong cơ sở dữ liệu
         $results = $this->productService->search($searchTerm);
         return view('pages.adminpages.admin-search', compact('results', 'searchTerm'))->with('i', (request()->input('page', 1) - 1) * 5);

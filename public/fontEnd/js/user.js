@@ -47,7 +47,6 @@ function showSub() {
     let text = "";
     // lấy dữ liêu
     const data = JSON.parse(localStorage.getItem("data"));
-    console.log(data);
     data.forEach((iteam) => {
         text += `<tr>
       <td>${iteam.name}</td>
@@ -61,11 +60,10 @@ function showCart() {
     hidenPop();
     showSub();
 }
-document.getElementById("layout").addEventListener("click", function (e) {
-    if (
-        !document.getElementById("listCartContainer").contains(e.target) &&
-        !document.getElementById("cart_icon").contains(e.target)
-    ) {
+
+$(document).mouseup(function (e) {
+    var container = $("#listCartContainer, #cart_icon");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
         closePop();
     }
 });

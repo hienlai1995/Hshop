@@ -25,9 +25,7 @@
                     <!-- COMPLETE ME - END POIN -->
                 </div>
             </div>
-
         </nav>
-
         <div id="midhead" class="styeleMidHead">
             <svg viewBox="0 0 192 65" class="logopage">
                 <g fill-rule="evenodd">
@@ -45,21 +43,18 @@
                         <button onclick="closePop()">X</button>
                     </div>
                     <h2>your product</h2>
-                    
                         {{-- danh sách sản phẩm yêu thích --}}
-                        <table>
-                            <thead>
-                              <tr>
+                    <table>
+                        <thead>
+                            <tr>
                                 <th>name</th>
                                 <th>price</th>
                                 <th>function</th>
-                              </tr>
-                            </thead>
-                            <tbody id="list_cart">
-                             
-                            </tbody>
-                          </table>
-                    
+                            </tr>
+                        </thead>
+                        <tbody id="list_cart">     
+                        </tbody>
+                    </table>        
                 </div>
             </div>
         </div>

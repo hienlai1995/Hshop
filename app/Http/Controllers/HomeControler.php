@@ -28,6 +28,7 @@ class HomeControler extends Controller
             "loginKey" => "required",
             "password" => "required|min:6"
         ]);
+   
         $dataLoginClient = $request->input();
 
         if (Auth::guard('admin')->attempt(["email" => $dataLoginClient["loginKey"], "password" => $dataLoginClient["password"]])) {
