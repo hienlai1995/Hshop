@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ComboListController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
+
 
 
 /*
@@ -23,15 +25,24 @@ use App\Http\Controllers\UserController;
 // 
 // 
 Route::get('/', [HomeControler::class, 'index'])->name('index');
-Route::get('/login', [HomeControler::class, 'login'])->name("login");
+Route::get('/loginUser', [HomeControler::class, 'getloginUser'])->name("getloginUser");
+Route::post('/loginUser', [HomeControler::class, 'postLoginUser'])->name("postLoginUser");
+Route::get('/loginAdmin', [HomeControler::class, 'getloginAdmin'])->name("getloginAdmin");
+Route::post('/loginAdmin', [HomeControler::class, 'postloginAdmin'])->name("postloginAdmin");
+
+
 Route::get('/logout', [Admincontroller::class, 'logout'])->name("logout");
+//  phần hàm store làm lại 
 Route::post('/admin', [HomeControler::class, 'store'])->name("admin");
-
-
+Route::get('/RegisterUser', [HomeControler::class, 'getRegisterUser'])->name("getRegisterUser");
+Route::post('/RegisterUser', [HomeControler::class, 'postRegisterUser'])->name("postRegisterUser");
+Route::get('/RegisterAdmin', [HomeControler::class, 'getRegisterAdmin'])->name("getRegisterAdmin");
+Route::post('/RegisterAdmin', [HomeControler::class, 'postRegisterAdmin'])->name("postRegisterAdmin");
 
 Route::middleware(['checkRole:user'])->name('user.')->group(function () {
     // Các routes dành cho người dùng
     Route::get('/user', [UserController::class, 'index'])->name('index');
+    Route::post('/user/payCart', [UserController::class, 'payCart'])->name('payCart');
 });
 Route::middleware(['checkRole:admin'])->group(function () {
     Route::get('/admin', [HomeControler::class, 'admin'])->name('ohyeah');
@@ -56,5 +67,9 @@ Route::middleware(['checkRole:admin'])->group(function () {
         Route::put('/combos/update', [ComboListController::class, 'update'])->name("updateCombo");
         Route::delete('/combos/delete{id}', [ComboListController::class, 'destroy'])->name("deleteCombo");
         Route::POST('/combos/detail{id}', [ComboListController::class, 'show'])->name("detail");
+    });
+    Route::prefix('admin')->name('order.')->group(function () {
+        Route::get('/order', [OrderController::class, 'index'])->name("listorder");
+        Route::get('/order/detail{id}', [OrderController::class, 'detail'])->name("detail");
     });
 });

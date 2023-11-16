@@ -49,14 +49,20 @@
                             <tr>
                                 <th>name</th>
                                 <th>price</th>
+                                <th>quantity</th>
                                 <th>function</th>
                             </tr>
                         </thead>
                         <tbody id="list_cart">     
                         </tbody>
-                    </table>        
+                    </table>
+                    <p id="totalPrice"></p>
+                    <div class="payOder"><button onclick="sendData()"><i class="fa-solid fa-money-bill"></i> Thanh toán</button> </div>      
                 </div>
             </div>
+        </div>
+        <div class="cart_disble" id="messageCart">
+            
         </div>
         <nav id="botHead" class="styleBotHead">
             <ul class="hotKey">
@@ -74,6 +80,5 @@
                 <li class="hotKeyLi"><a class="removedefaulink linkcolorhead" href="#">Ốp</a></li>
             </ul>
         </nav>
-    </div>
-    
+    </div> 
 </header>

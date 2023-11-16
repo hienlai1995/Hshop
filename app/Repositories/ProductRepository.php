@@ -41,4 +41,8 @@ class ProductRepository
     {
         return $this->model->create($payload);
     }
+    public function searchByCart($listIdProductInCart)
+    {
+        return $this->model::whereIn('id', $listIdProductInCart)->get();
+    }
 }

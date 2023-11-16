@@ -16,4 +16,3 @@ if (document.getElementById("alert-success")) {
         document.getElementById("alert-success").style.display = "none";
     }, 2000);
 }
-

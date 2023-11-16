@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('combo_products', function (Blueprint $table) {
+        Schema::create('order_products', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('combo_id');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('quantity');
             $table->timestamps();
-            $table->primary(['product_id', 'combo_id']);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('combo_id')->references('id')->on('combos')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('combo_products');
+        //
     }
 };

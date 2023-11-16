@@ -19,4 +19,8 @@ class Products extends Model
     {
         return $this->belongsToMany(Combo::class, 'combo_products', 'product_id', 'combo_id');
     }
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Combo::class, 'order_products', 'product_id', 'order_id')->withPivot('quantity');
+    }
 }

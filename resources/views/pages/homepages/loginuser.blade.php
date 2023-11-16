@@ -4,8 +4,9 @@
    <div  class="logincontainer">
         <div class="loginbox" style="background-image: url(&quot;https://down-vn.img.susercontent.com/file/sg-11134004-7rbl1-llop4bp9djo0e4&quot;); ">
             <div class="loginboxiteam">
-                        <form action="{{URL::to("/admin")}}" method="post">
+                        <form action="{{URL::to("/loginUser")}}" method="post">
                            <div class="form">
+                                <h2>User Login</h2>
                                  <div class="headform">
                                     <div class="K1dDgL">Đăng nhập</div>
                                     <div class="NYkwiO">
@@ -28,28 +29,24 @@
                             <div class="inputform">
                               <div class="userinputcontai">
                                 <div class="inputbnt">
-                                    <input class="taginput" type="text" placeholder="Email/Số điện thoại/Tên đăng nhập" autocomplete="on" name="loginKey" maxlength="128" aria-invalid="false" value="{{old("loginKey")}}">
+                                    <input class="taginput" type="text" placeholder="Email/Số điện thoại/Tên đăng nhập" autocomplete="on" name="email" maxlength="128" aria-invalid="false" value="{{old("loginKey")}}">
                                 </div>
-                                  
                                    <div class="errovailidate"> 
-                                    @error('loginKey')
+                                    @error('email')
                                         <p class="errmes">{{$message}}</p>
                                     @enderror
-                                    
                                 </div>  
                               </div>
                                 <div class="passinputcontai">
                                 <div class="inputbnt">
                                         <input class="taginput" type="password" placeholder="Mật khẩu" autocomplete="current-password" name="password" maxlength="16" aria-invalid="false" value="{{old("password")}}">
                                     </div>
-                                    
                                     <div class="errovailidate"> 
                                         @error('password')
                                         <p class="errmes">{{$message}}</p>
     
                                         @enderror
-                                    </div>
-                                    
+                                    </div>   
                                 </div>
                                 <button class="login_bnt">Đăng nhập</button>
                                 <div class="type_login">
@@ -87,5 +84,10 @@
              </div>
          </div>
       </div>
+      @if(session('addUserComplete'))
+         <div class="alert alert-success">
+        {{ session('addUserComplete') }}
+        </div>
+      @endif  
     </div>
 @endsection

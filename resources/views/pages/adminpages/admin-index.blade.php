@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset("fontEnd/css/adminproduct.css")}}" />
     <link rel="stylesheet" href="{{asset("fontEnd/css/adminAdd.css")}}" />
     <link rel="stylesheet" href="{{asset("fontEnd/css/adminAddCombo.css")}}" />
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{csrf_token()}}" />
     <meta name="route-name" content="{{ route('combo.listcombossend') }}">
     <meta name="update-name" content="{{ route('combo.updateCombo') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,8 @@
         @yield('comboAdd')
         @yield('comboEdit')
         @yield('detailCombo')
+        @yield('order')
+        @yield('orderdetail')
     </main>
     <script src="{{asset("fontEnd/js/admin.js")}}"></script>
 </body>

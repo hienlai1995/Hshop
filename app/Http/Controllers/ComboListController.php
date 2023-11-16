@@ -135,7 +135,6 @@ class ComboListController extends Controller
             }
             $comboName = $request->input('comboName');
             $comboPrice = $request->input('comboPrice');
-            $isPrice = !empty($comboPrice) && is_numeric($comboPrice);
             if (!empty($selectedProductIds) && !empty($comboName) && !empty($comboPrice) && is_numeric($comboPrice)) {
                 $this->comboListService->update($request, $listProductName, $comboPrice);
                 $this->comboProductSevice->update($selectedProductIds, $request);

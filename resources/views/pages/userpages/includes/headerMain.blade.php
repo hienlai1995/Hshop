@@ -12,8 +12,10 @@
                         <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="#"> <i class="fa-solid fa-bell"></i> Thông báo </a></li>
                         <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="#"> <i class="fa-regular fa-circle-question"></i> Hỗ trợ </a></li>
                         <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="#"> <i class="fa-solid fa-earth-americas"></i> Ngôn ngữ </a></li>
-                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead rightboder" href="#">Đăng kí</a></li>
-                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="{{URL::to('/login')}}">Đăng nhập</a></li>
+                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead rightboder" href="{{URL::to('/RegisterUser')}}">Đăng kí USER </a></li>
+                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead rightboder" href="{{URL::to('/RegisterAdmin')}}">Đăng kí ADMIN </a></li>
+                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="{{URL::to('/loginUser')}}">LOGIN USER</a></li>
+                        <li class="styleTopHeadLeftLi"><a class="removedefaulink linkcolorhead" href="{{URL::to('/loginAdmin')}}">LOGIN ADMIN</a></li>
                     </ul>
                 </div>
                 <div class="phonenav">

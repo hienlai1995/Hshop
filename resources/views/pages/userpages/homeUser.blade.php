@@ -3,6 +3,10 @@
     @include('pages.userpages.includes.headerUser')
 @endsection
 @section('content')
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="cartRoute" content="{{ route('user.payCart')}}">
+</head>
 <div class="homecontainer">
     <div class="eventContent">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -58,7 +62,7 @@
     </div>
     <!-- product -->
     <div class="homeProductContainer">
-        <div class="listTitle">DANH SÁCH SẢN PHẨM</div>
+        <div class="listTitle">DANH SÁCH SẢN SẢN PHẨM</div>
         <div class="productList">
              @foreach ($products as $item)
              <div class="productBox">
@@ -72,9 +76,14 @@
                 </div>
                 <div class="paymethod">
                         <button class="btn btn-danger"  type="submit" onclick="buy()">MUA</button>
-                        <button class="btn btn-danger" id="{{$item->id}}" type="submit" onclick="addCart(this.id)">THÊM VÀO GIỎ HÀNG</button>          
+                        <div class="quantity">
+                            <button class="minus-btn" id="minus-btn{{$item->id}}" data-info1="{{$item->id}}" onclick="reduceNumber(this,`quantity-text`,`data-info1`)">-</button>
+                            <span class="quantity-text" id="quantity-text{{$item->id}}">1</span>
+                            <button class="plus-btn" id="plus-btn{{$item->id}}" data-info2="{{$item->id}}"   onclick="increasingNumber(this,`quantity-text`,`data-info2`)">+</button>
+                        </div>
+                        <button class="btn btn-danger" id="{{$item->id}}" type="submit" data-id="{{$item->id}}" onclick="addCart(this.id)"><i class="fa-solid fa-cart-shopping"></i></button>          
                 </div>
-            </div>
+            </div>  
              @endforeach
         </div>
     </div>
